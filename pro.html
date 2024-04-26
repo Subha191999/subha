@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>
+            <h1>scroll animation</h1>
+var count=1;
+
+window.addEventListener("scroll",()=>{
+
+  if (document.documentElement.scrollTop > 1600) {
+    setInterval(() => {
+      if (count <= 84) {
+        count++;
+        // number1.innerHTML=count;
+      number1.innerHTML=count-3;
+      }
+
+      if (count <= 37) {
+        count++;
+        // number1.innerHTML=count;
+      number2.innerHTML=count;
+      }
+
+      if (count <= 15) {
+        count++;
+        // number1.innerHTML=count;
+      number3.innerHTML=count-2 ;
+      }
+
+      if (count <= 89) {
+        count++;
+        // number1.innerHTML=count;
+      number4.innerHTML=count;
+      }
+    }, 400);
+
+  }
+});</span>
+
+
+    </div>
+
+
+    <div>
+        <h1>slider</h1>
+        
+<span>
+let slides = document.getElementsByClassName("myslides");
+let dots = document.getElementsByClassName("dot");
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}</span>
+    </div>
+<div>  window.location.href = "second.html";</div>
+  
+<h1>closure</h1>
+<div> // eg?
+  // closure is a fun with in bundle within the lexical group? or fucntion along with the lexical scope
+  // a parent function and child function if we have a varibale decale in parent we can acces and call from child to parent is called closure
+  
+  //function along with this ls=exicsl scope bundle toghther of closure is ca cclosure
+  
+  function x() {
+      var a="ajay";
+      function y() {
+          console.log(a);
+      }
+      y()
+  }
+  x();
+  
+  //eg1
+  function x() {
+      var a=2;
+      function y() {
+          console.log(a);
+      }
+     return y;
+  }
+  var z = x();
+  console.log(z);
+  z();
+  
+  //eg2
+  
+  function f() {
+      var n =900;
+  
+  function g() {
+      var an =3;
+      function gg() {
+          console.log(n, an);
+      }
+      gg()
+  }g()
+  }
+  f();</div>
+
+
+  <h1>hoisting</h1>
+
+  <div>// in javascript , hoisting is the default behaviour of moving all the declaration at the top of the scope before code execution
+
+    // it is usually woked on function declaration not in experssion
+    
+    // function Off() {
+    //     console.log("this is funvtion declation");
+    // }
+    // Off();//in this declaration we can call it anywhere top bottom, if we call this actually what is happening is function Off() {
+    //     console.log("this is funvtion declation");
+    // } this is going to top it is defult
+    
+    
+    
+    //function experssion call it form variable
+    
+    // var funct= function() {
+    //     console.log("this is funvtion declation");//this will execute but if i call on top of the fucntion it will be undefined
+    // }
+    // funct();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //eg trying 
+    
+    // jkl()
+    // console.log(e);
+    
+    // var e=3;
+    // function jkl() {
+    //     console.log("kjnfewoj");
+    // }
+    
+    
+    </div>
+   
+   <h1>JSON</h1>
+   <div>
+    //JSON --- Javscritp object notation   DATA TRANSFER FORMAT AANU JSON -- language independed to all language
+
+// wb app ok client server architecture aanu  -- data is passing 
+
+
+// data types like(sting, array Boolean, object, null, undefined) serverlot ayakan ulla oru datatransfer format anu JSON
+
+// from object to string cchange chyanel oru way ind 
+
+
+// object to array
+var objName ={
+    name:"ajay",
+    place:"mannue",
+    address:"ajjsknner",
+}
+
+var objString= JSON.stringify(objName);
+console.log(objString); 
+
+
+//array to object
+
+var d= ["name", "place"];
+
+var stringArr = JSON.parse(d);
+console.log(stringArr); 
+
+   </div>
+
+   <h1>VAR LET AND CONST</h1>
+
+   <div>// basically var let const are behave like same but there is some differnece b/w them
+
+    // var - var declare chyan ullad aan , javascript begining , pakaram vannad aan let
+    
+    // every function have a stack memory to store the variable
+    
+    // eg: 
+    // var "location" global varibale aan so ed unnexpected behavaiout tharum but let location ittal alredy declared in the windows object enn error adikum
+    
+    var location ="none"
+    let locarion="none"
+    
+    // it is safe to use LET
+    
+    // UNDEFINED meaning :  we didnt assign a value inside the variable to it will be shows as undefined
+    
+    // HOISTING : declaration topil kond poi vekkum
+    
+    function test() {
+        var nameK;
+        console.log(nameK);
+        nameK="10;"
+    
+        console.log(nameK);
+    }test() ;
+    
+    // this is hoisting declaration topil kond poi vekkum UNDEFINED AANU KANIKAA
+    // js read like this
+    
+    
+    // and  the LET variable HOISTING WORK AAVILA
+    
+    // using hoising we can add No.of times but inthe case of let it will not work shows as error
+    
+    // we can declare one time only for LET
+    
+    
+    
+    
+    // var -> function scope aanu print avum
+    // let -> block scope anu  inside the {  inside this }
+    
+    // block scope example step1
+    function name() {
+        let a =20;
+        if (true) {
+            let a =40;/// epol evde ee line ellegi mele ulla 20 print chyum
+            console.log(a)  // block scope
+        }
+        console.log(a)
+    }
+    name();
+    
+    
+    // CONST letnte ella properties und 
+    // but const declare chyumbo oru value indavanam and it should be constant we can reasignt he value
+    // but we ca mutate inside the object or array eg 
+    
+    function test() {
+        const a =[];
+        a.push(33); // eghen mutate chyam
+        console.log(a);
+    }
+    test();</div>
+
+
+    <h1> array sorting</h1>
+    <div>
+      
+const numbers = [4, 3, 7, 1, 9, 2];
+
+// numbers.sort((a,b) => b-a);
+
+// console.log(numbers);
+
+var largest = Math.max(...numbers);
+var secondLargest = Math.max(...numbers.filter(num=>num!==largest));
+console.log(secondLargest);
+    </div>
+</body>
+</html>
